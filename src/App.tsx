@@ -1,21 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Provider } from 'react-redux'
+import { TodoList } from './components/TodoList'
+import { store } from './store/store'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
 
   return (
-    <div className="apptest">
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className='text-3xl font-bold underline'>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-    </div>
+    <Provider store={store}>
+        <TodoList />
+    </Provider>
   )
 }
 
