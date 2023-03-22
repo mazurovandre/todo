@@ -1,15 +1,7 @@
 import { ITodo } from "../../types/types"
-import { TODOS_ACTION } from "./todosConst"
+import { TODOS_ACTION } from "./todosConst" 
 
-const initialState: ITodo[] = [
-    {
-        id: 0,
-        title: 'init Title',
-        isDone: true
-    }
-]
-
-export const todosReducer = (state: ITodo[] = initialState, action) => {
+export const todosReducer = (state: ITodo[] = [], action) => {
     switch (action.type) {
         case TODOS_ACTION.ADD_TODO:
             return [...state, action.payload]
