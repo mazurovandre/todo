@@ -1,15 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { removeTodo, toggleTodo } from '../store/store';
+import { removeTodo, toggleTodo } from '../store/todos/todosActions';
+import { ITodo } from '../types/types';
 
-interface ITodoItem {
-    id: number,
-    title: string,
-    isDone: boolean
-}
-
-export const TodoItem:React.FC<ITodoItem> = ({id, title, isDone}) => {
-  const btnColor = isDone ? "green" : "grey";
+export const TodoItem:React.FC<ITodo> = ({id, title, isDone}) => {
 
   const dispatch = useDispatch()
 
